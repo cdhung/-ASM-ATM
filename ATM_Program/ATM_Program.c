@@ -58,6 +58,8 @@ int main() {
 						count2=0;
 						printf("So du: %d", AccBalance);
 						break;
+					case 4:
+						exit(0);
 					default:
 						printf("\nLua chon khong dung!");
 						count2++;
@@ -95,7 +97,7 @@ int Login(char username[], char password[]){
 
 // Menu function
 void Menu(){
-	printf("\n1. Rut tien\n2. Chuyen khoan\n3. Kiem tra so du\n");
+	printf("\n1. Rut tien\n2. Chuyen khoan\n3. Kiem tra so du\n4. Exit\n");
 }
 
 // Withdraw function
@@ -110,7 +112,7 @@ int Withdraw(int AccBalance, int num){
 		printf("\n\tVui long nhan tien tai khay dung ben duoi\n");
 		AccBalance -= num;
 		printf("\nSo du: %d", AccBalance);
-		}
+	}
 	return AccBalance;
 }
 
