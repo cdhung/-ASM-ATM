@@ -69,6 +69,7 @@ int main() {
 					printf("\n\nTiep tuc giao dich! (Y/N): ");
 					fflush(stdin);
 					ch = getchar();
+					system("cls");
 				}
 				else{
 					printf("\n\nNhap sai 3 lan!\nVui long dang nhap lai...\n");
