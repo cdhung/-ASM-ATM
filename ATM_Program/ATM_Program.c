@@ -31,7 +31,7 @@ int main() {
 		scanf("%s", username);
 		printf("Password: ");
 		scanf("%s", password);
-		if(Login(username, password)==1)
+		if(Login(username, password)==0)
 			count1++;
 		else{
 			printf("Your ID: 123456\n");
@@ -59,6 +59,7 @@ int main() {
 						printf("So du: %d", Balance);
 						break;
 					case 4:
+						printf("\nXin cam on hen gap lai quy khach!");
 						exit(0);
 					default:
 						printf("\nLua chon khong dung!");
@@ -81,19 +82,19 @@ int main() {
 		}
 	}
 	if(count1 == 3){
-		printf("\nNhap sai qua 3 lan! vui long lien he CSKH.");
+		printf("\nNhap sai qua 3 lan! Vui long lien he CSKH.");
 	}
-
 	return 0;
 }
 
 // Login function
 int Login(char username[], char password[]){
-	if(strcmp(username,"hungcd") != 0|| strcmp(password,"1a@") != 0){
-		printf("\nTai khoan hoac mat khau khong dung!\nVui long nhap lai...\n");
+	if(strcmp(username,"hungcd") == 0 && strcmp(password,"1a@") == 0)
 		return 1;
+	else{
+		printf("\nTai khoan hoac mat khau khong dung!\nVui long nhap lai...\n");
+		return 0;
 	}
-	else return 0;
 }
 
 // Menu function
@@ -124,9 +125,9 @@ int Transfer(int id, int num, int Balance){
 	}
 	else{
 		Balance -= num;
-		printf("\nID %d: +%d", id, num);
-		printf("\nID 123456: -%d", num);
-		printf("\nSo du: %d", Balance);
+		printf("\nID %d:\t\t+%d", id, num);
+		printf("\nID 123456:\t-%d", num);
+		printf("\nSo du:\t\t%d", Balance);
 	}
 	return Balance;
 }
