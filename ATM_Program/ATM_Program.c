@@ -15,14 +15,14 @@
 int Login(char username[], char password[]);
 void Menu();
 int Withdraw(int AccBalance, int num);
-int Transfer(int id, int num, int AccBalance);
+int Transfer(int id, int num, int Balance);
 
 int main() {
 	char username[10], password[10];
 	int count1 = 0, count2 = 0;
 	int opt = 0;
 	int num1;
-	int num2, AccBalance = 50000000;
+	int num2, Balance = 50000000;
 	int id, num3;
 	char ch;
 	Login:
@@ -44,7 +44,7 @@ int main() {
 						count2=0;
 						printf("\nSo tien can rut: ");
 						scanf("%d", &num1);
-						AccBalance = Withdraw(AccBalance, num1);
+						Balance = Withdraw(Balance, num1);
 						break;
 					case 2:
 						count2=0;
@@ -52,11 +52,11 @@ int main() {
 						scanf("%d", &id);
 						printf("\nNhap so tien can chuyen: ");
 						scanf("%d", &num3);
-						AccBalance = Transfer(id, num3, AccBalance);
+						Balance = Transfer(id, num3, Balance);
 						break;
 					case 3:
 						count2=0;
-						printf("So du: %d", AccBalance);
+						printf("So du: %d", Balance);
 						break;
 					case 4:
 						exit(0);
@@ -102,8 +102,8 @@ void Menu(){
 }
 
 // Withdraw function
-int Withdraw(int AccBalance, int num){
-	if(num>AccBalance)
+int Withdraw(int Balance, int num){
+	if(num>Balance)
 		printf("\nVuot qua so du!");
 	else if(num > 3000000)
 		printf("\nSo tien rut phai nho hon 3.000.000");
@@ -111,24 +111,24 @@ int Withdraw(int AccBalance, int num){
 		printf("\nBan phai nhap so tien la boi cua 50.000");
 	else{
 		printf("\n\tVui long nhan tien tai khay dung ben duoi\n");
-		AccBalance -= num;
-		printf("\nSo du: %d", AccBalance);
+		Balance -= num;
+		printf("\nSo du: %d", Balance);
 	}
-	return AccBalance;
+	return Balance;
 }
 
 // Transfer function
-int Transfer(int id, int num, int AccBalance){
-	if(num>AccBalance){
+int Transfer(int id, int num, int Balance){
+	if(num>Balance){
 		printf("\nVuot qua so du!");
 	}
 	else{
-		AccBalance -= num;
+		Balance -= num;
 		printf("\nID %d: +%d", id, num);
 		printf("\nID 123456: -%d", num);
-		printf("\nSo du: %d", AccBalance);
+		printf("\nSo du: %d", Balance);
 	}
-	return AccBalance;
+	return Balance;
 }
 
 
