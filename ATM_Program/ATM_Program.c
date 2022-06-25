@@ -14,7 +14,7 @@
 
 int Login(char username[], char password[]);
 void Menu();
-int Withdraw(int AccBalance, int num);
+int Withdraw(int Balance, int num);
 int Transfer(int id, int num, int Balance);
 
 int main() {
