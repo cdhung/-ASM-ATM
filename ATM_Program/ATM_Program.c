@@ -75,7 +75,7 @@ int main() {
 					printf("\n\nNhap sai 3 lan!\nVui long dang nhap lai...\n");
 					goto Login;
 				}
-			}while(ch == 'Y' || ch == 'y'&&count2<3);
+			}while(ch == 'Y' || ch == 'y');
 			printf("\nXin cam on hen gap lai quy khach!");
 			break;
 		}
