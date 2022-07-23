@@ -16,6 +16,7 @@ int Login(char username[], char password[]);
 void Menu();
 int Withdraw(int Balance, int num);
 int Transfer(int id, int num, int Balance);
+//int Balance = 50000000;
 
 int main() {
 	char username[10], password[10];
